@@ -21,7 +21,6 @@ def send_set(dbus_property: str, dbus_property_type: str, dbus_property_value: s
              f"variant:{dbus_property_type}:{dbus_property_value}"]
     process=subprocess.run(command,
                            check=False, text=True, stdout=subprocess.PIPE)
-    print(process.stdout)
     return process.stdout
 
 def send_get(dbus_property: str) -> str:
@@ -35,7 +34,6 @@ def send_get(dbus_property: str) -> str:
              f"string:{dbus_property}"]
     process=subprocess.run(command,
                            check=False, text=True, stdout=subprocess.PIPE)
-    print(process.stdout)
     return process.stdout
 
 def action_play_pause():
